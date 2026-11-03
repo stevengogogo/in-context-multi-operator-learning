@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+*.npz
+# Data, outputs and local caches
+data/
+outputs/
+.cache/
+.DS_Store
+wandb/
+*.eqx
+experiments/output/
+experiments/icon_comparison/results/
+
+# Keep the vendored ICON config folder named data/
+!third_party/icon-tutorial/configs/data/

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deeposets"
+version = "0.1.0"
+description = "DeepOSets: in-context multi-operator learning (NeurIPS 2026) - JAX implementation and experiments."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "jax[cpu]>=0.4",
+  "equinox",
+  "optax",
+  "matplotlib",
+  "numpy",
+  "tqdm",
+  "sympy",
+  "einshape",
+]
+
+[project.optional-dependencies]
+# PyTorch benchmarks in experiments/icon_comparison
+icon = ["torch"]
+wandb = ["wandb"]
+# NVIDIA GPU support for JAX (CUDA 13 driver)
+cuda = ["jax[cuda13]"]
+
+[tool.setuptools.packages.find]
+include = ["deeposets*"]
